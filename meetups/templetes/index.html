@@ -1,0 +1,36 @@
+{% extends 'meetups\templetes\base\base.html'%}
+{% load static%}
+
+{% block title %} 
+Django Welcome
+{% endblock %}
+
+{% block site_css %}
+<link rel="stylesheet" href="{% static 'all-meetups.css' %}">
+{% endblock %}   
+
+{% block header_line %} 
+<nav> <a href="" id="main-logo">Django Meetups</a></nav>
+{% endblock %}
+{% block main_heading %}
+We got great meetups comming...
+{% endblock %}
+
+{% block header_content %}
+Find the one that suits you needs..
+{% endblock %}
+
+{% block body %}
+
+<section>
+    <h2>Upcomming Meetups</h2>
+    <ol>
+        {% for  meetup_item in meetups%}
+         {% include 'meetups\templetes\includes\meetup-item.html' %}
+        {% endfor%}
+    </ol>
+</section>
+
+{% endblock %}
+
+    
