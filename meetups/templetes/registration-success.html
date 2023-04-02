@@ -1,0 +1,25 @@
+{% extends 'meetups\templetes\base\base.html'%}
+
+{% load static %}
+
+{% block title %} 
+You Register Successfully
+{% endblock %}
+
+{% block site_css %}
+<link rel="stylesheet" href="{% static 'registration-comfirmation.css' %}">
+{% endblock %}  
+
+{% block main_heading %}
+<h1>Thanks For Signing Up</h1>
+{% endblock %}
+
+{% block  body%}
+<section id="confirmation">
+    <h2>You have successfully registered</h2>
+    <p>Thanks For signing Up.</p>
+</section>
+<section id="continue">
+    <p> <a href="{% url 'index' %}" class="btn">Explore More out Meetups</a></p>
+</section>
+{% endblock%}
