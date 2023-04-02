@@ -10,7 +10,13 @@
 <link rel="stylesheet" href="{% static 'meetup-detail.css' %}">
 {% endblock %}  
 
+{% block main_heading %}
+<h1>{{ meetup_title }}</h1>
+{% endblock %}
+
 {% block body %}
+
+{% if meetup_found %}
 
 <article>
     <img src="" alt="">
@@ -31,6 +37,16 @@
     </section>
 
 </article>
+{% else %}
+<article>
+    <p>No Meetup Found...!</p>
+    <div class="meetup-actions">
+        <a  href="{% url 'index' %}" class="btn">Home</a>
+    </div>
+</article>
+
+{% endif %}
+
 
 {% endblock %}
 

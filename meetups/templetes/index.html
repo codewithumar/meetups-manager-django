@@ -26,11 +26,10 @@ Find the one that suits you needs..
     <h2>Upcomming Meetups</h2>
     <ol>
         {% for  meetup_item in meetups%}
-         {% include 'meetups\templetes\includes\meetup-item.html' %}
+         {% include 'meetups\templetes\includes\meetup-item.html' with title=meetup_item.title location='Lahore' details=meetup_item.description slug=meetup_item.slug %}
         {% endfor%}
     </ol>
 </section>
-
 {% endblock %}
 
     
